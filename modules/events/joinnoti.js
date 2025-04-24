@@ -35,11 +35,11 @@ module.exports.run = async function({ api, event, Users  , Threads}) {
   if (typeof thread["joinNoti"] != "undefined" && thread["joinNoti"] == false) return;
   ///////////////////////////////////////////////////////
 	if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
-		api.changeNickname(`「 ${global.config.PREFIX} 」 • ${(!global.config.BOTNAME) ? "Made by Khôi" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
+		api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? "Made by Khôi" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
 		const fs = require("fs");
-    var mlg="Kết nối thành công\nĐã load toàn bộ lệnh và người dùng trong nhóm.\n❌ Nếu nhóm của bạn chưa kích hoạt sử dụng bot, vui lòng sử dụng lệnh 'callad' để liên hệ Admin.\n─────────────────\n🌐 Facebook: https://www.facebook.com/100018277053087"
+    var mlg="Kết nối thành công\nĐã load toàn bộ lệnh và người dùng trong nhóm.\n❌ Nếu nhóm của bạn chưa kích hoạt sử dụng bot, vui lòng sử dụng lệnh 'callad' để liên hệ Admin.\n─────────────────\n🌐 Facebook: https://www.facebook.com/profile.php?id=61550528673840"
     	return api.sendMessage(threadID,async () => {
-await api.shareContact(`${mlg}`, 100018277053087, threadID);
+await api.shareContact(`${mlg}`, 61550528673840, threadID);
 });
 
 	}
@@ -95,7 +95,7 @@ await api.shareContact(`${mlg}`, 100018277053087, threadID);
 			}
 			memLength.sort((a, b) => a - b);
 			
-			(typeof threadData.customJoin == "undefined") ? msg = "‎[ Thành Viên Vào Nhóm ]\n─────────────────\n🎀Chào mừng {name} đã đến với box {threadName}.\n👤{type} là thành viên thứ {soThanhVien} của nhóm\n🎀 {type} được thêm bởi: {author}\n⏰ Thời gian:{time}\n📆 Vào buổi {session} {thu}" : msg = threadData.customJoin;
+			(typeof threadData.customJoin == "undefined") ? msg = "‎===『 𝗧𝗵𝗲̂𝗺 𝗧𝘃𝗺 𝗧𝗵𝗮̀𝗻𝗵 𝗖𝗼̂𝗻𝗴 』===\n━━━━━━━━━━━━━━━━\n→ [💓] 𝗖𝗵𝗮̀𝗼 𝗺𝘂̛̀𝗻𝗴 {name} 𝘁𝗼̛́𝗶 𝘃𝗼̛́𝗶 𝗻𝗵𝗼́𝗺 {threadName}\n━━━━━━━━━━━━━━━━\n→ [🌷] 𝗡𝗵𝗼̛́ 𝘁𝘂̛𝗼̛𝗻𝗴 𝘁𝗮́𝗰 đ𝗮̂̀𝘆 đ𝘂̉ 𝗻𝗵𝗮́ 𝗯𝗯𝗶 𝘁𝗵𝘂̛́ {soThanhVien} 𝗰𝘂̉𝗮 𝗯𝗼𝘁  🥳\n→ [❄️] 𝗖𝗵𝘂́𝗰 𝗯𝗯𝗶 𝟭 𝗻𝗴𝗮̀𝘆 𝘁𝗵𝗮̣̂𝘁 𝘃𝘂𝗶 𝘃𝗲̉\n→[⏰️] 𝘁𝗵𝗼̛̀𝗶 𝗴𝗶𝗮𝗻 𝘃𝗮̀𝗼 : {time}|{thu}  " : msg = threadData.customJoin;
       var getData = await Users.getData(event.author)
 var nameAuthor = typeof getData.name == "undefined" ? "Người dùng tự vào" : getData.name
 			msg = msg
@@ -118,4 +118,4 @@ var nameAuthor = typeof getData.name == "undefined" ? "Người dùng tự vào"
 });
 } catch (e) { return console.log(e) };
 }
-}
+	  }
