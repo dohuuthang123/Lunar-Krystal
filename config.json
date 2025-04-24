@@ -16,8 +16,8 @@
     "ACCESSTOKEN": "",
     "BOTNAME": "Krystal [BETA]",
     "AMDIN_NAME": "Điền tên bạn vào đây",
-    "FACEBOOK_ADMIN": "https://www.facebook.com/100018277053087",
-    "PREFIX": "/",
+    "FACEBOOK_ADMIN": "",
+    "PREFIX": "!",
     "ADMINBOT": [
         "61550528673840"
     ],
